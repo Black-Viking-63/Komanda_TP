@@ -1,0 +1,69 @@
+﻿{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "SaveData for KOMANDA game",
+  "properties": {
+
+    "Options": {
+      "type": "object",
+
+      "properties": {
+        "PlayerCount": {
+          "type": "integer"
+        },
+        "MapWidth": {
+          "type": "integer"
+        },
+        "MapHeight": {
+          "type": "integer"
+        },
+        "WallSpawnChance": {
+          "type": "number"
+        },
+        "TotalEnemies": {
+          "type": "integer"
+        },
+        "MaxSpawnPerTurn": {
+          "type": "integer"
+        },
+        "SpawnChance": {
+          "type": "number"
+        },
+        "Seed": {
+          "type": "integer"
+        }
+      },
+      "required": [ "PlayerCount", "MapWidth", "MapHeight", "WallSpawnChance", "TotalEnemies", "MaxSpawnPerTurn", "SpawnChance", "Seed" ]
+    },
+
+    "State": {
+      "type": "object",
+      "properties": {
+        "CurrentTurn": {
+          "type": "integer"
+        },
+        "Map": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          }
+        },
+        "SpawnsRemain": {
+          "type": "integer"
+        },
+        "Players": {
+          "type": "array"
+        },
+        "Enemies": {
+          "type": "array"
+        }
+      },
+      "required": [ "CurrentTurn", "Map", "SpawnsRemain", "Players", "Enemies" ]
+    }
+  },
+  "required": [ "Options", "State" ],
+  "title": "KOMANDA's SaveData",
+  "type": "object"
+}
